@@ -70,6 +70,10 @@ postModules = [
     position: 'left-left'
   },
   {
+    template: 'postActions',
+    position: 'left-right'
+  },
+  {
     template: 'postContent', 
     position: 'center-center'
   },
@@ -79,6 +83,31 @@ postModules = [
   }
 ];
 
+postHeading = [
+  {
+    template: 'postTitle',
+    order: 1
+  },
+  {
+    template: 'postDomain', 
+    order: 5
+  }
+]
+
+postMeta = [
+  {
+    template: 'postMeta',
+    order: 1
+  },
+  {
+    template: 'postCommentsLink',
+    order: 3
+  },  
+  {
+    template: 'postAdmin', 
+    order: 5
+  }
+]
 // ------------------------------ Callbacks ------------------------------ //
 
 postSubmitClientCallbacks = [];
