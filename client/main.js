@@ -11,25 +11,6 @@ STATUS_REJECTED=3;
 
 navItems.push('adminMenu');
 
-viewNav = viewNav.concat([
-  {
-    route: 'posts_top',
-    label: 'Top'
-  },
-  {
-    route: 'posts_new',
-    label: 'New'
-  },
-  {
-    route: 'posts_best',
-    label: 'Best'
-  },
-  {
-    route: 'posts_digest',
-    label: 'Digest'
-  }   
-]);
-
 adminNav = adminNav.concat([
   {
     route: 'posts_pending',
@@ -66,3 +47,7 @@ postModules = _.sortBy(postModules, function(module){return _.indexOf(modulePosi
 postHeading = _.sortBy(postHeading, 'order');
 
 postMeta = _.sortBy(postMeta, 'order');
+
+Meteor.startup(function () {
+  $('#rss-link').attr('title', i18n.t('New Posts'));
+});

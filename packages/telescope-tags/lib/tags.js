@@ -20,14 +20,11 @@ Categories = new Meteor.Collection("categories", {
 });
 
 // category post list parameters
-viewParameters.category = function (terms, baseParameters) {
-  // always same as "top" view for now
-  var parameters = deepExtend(true, baseParameters, {options: {sort: {sticky: -1, score: -1}}});;
-
-  if(typeof terms.category !== 'undefined' && !!terms.category)
-    _.extend(parameters.find, {'categories.slug': terms.category});
-
-  return parameters;
+viewParameters.category = function (terms) { 
+  return {
+    find: {'categories.slug': terms.category},
+    options: {sort: {sticky: -1, score: -1}}
+  };
 }
 
 // push "categories" modules to postHeading
@@ -79,3 +76,7 @@ Meteor.startup(function () {
     }
   });
 });
+
+getCategoryUrl = function(slug){
+  return getSiteUrl()+'category/'+slug;
+};
