@@ -33,3 +33,9 @@ i18next-meteor
 /iron-core
 /iron-dynamic-template
 /kadira
+/handlebars-server
+/npm
+/mailchimp
+/synced-cron
+/cookies
+/telescope-newsletter
