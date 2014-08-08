@@ -75,8 +75,8 @@
       },
       "subs-manager": {
         "git": "https://github.com/meteorhacks/subs-manager.git",
-        "tag": "v1.0.1",
-        "commit": "38317052d1601002d4dff537e4e0f61d1aa36e6d"
+        "tag": "v1.0.2",
+        "commit": "029236aa004062cc10d8c04e79907d6fe223ecf7"
       },
       "telescope-module-embedly": {
         "git": "https://github.com/TelescopeJS/telescope-module-embedly.git",
