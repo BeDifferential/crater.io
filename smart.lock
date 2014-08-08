@@ -20,7 +20,8 @@
       "mailchimp": {},
       "synced-cron": {},
       "cookies": {},
-      "telescope-newsletter": {}
+      "telescope-newsletter": {},
+      "phantomjs": {}
     },
     "packages": {
       "momentjs": {
@@ -45,8 +46,8 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.2.8",
-        "commit": "149984b1aff3a5642a270aff9bd9006872c8302e"
+        "tag": "v1.0.0",
+        "commit": "acbc04982025fe78cebb8865b5a04689741d4b0b"
       },
       "spin": {
         "git": "https://github.com/SachaG/meteor-spin.git",
@@ -85,8 +86,8 @@
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.10",
-        "commit": "036c85cea98369a55cf3a5c46463dffe755dadbd"
+        "tag": "v2.4.12",
+        "commit": "08c1f65bec94094f17f5df3ebd65cfcc298e5368"
       },
       "handlebars-server": {
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
@@ -100,8 +101,8 @@
       },
       "mailchimp": {
         "git": "https://github.com/MiroHibler/meteor-mailchimp.git",
-        "tag": "v0.4.0",
-        "commit": "cabd63c49f8bf27b28a53358df475bd14b9becb0"
+        "tag": "v0.4.2",
+        "commit": "7d100e96b37eb931f4e1d9544da677bb43fe8b5b"
       },
       "synced-cron": {
         "git": "https://github.com/percolatestudio/meteor-synced-cron.git",
@@ -117,6 +118,11 @@
         "git": "https://github.com/TelescopeJS/telescope-newsletter.git",
         "tag": "v0.1.6",
         "commit": "f537dfdf41e6a6007f414ead6102b4d9f9bc087a"
+      },
+      "phantomjs": {
+        "git": "https://github.com/gadicohen/meteor-phantomjs.git",
+        "tag": "v0.0.2",
+        "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
