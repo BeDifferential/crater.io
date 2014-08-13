@@ -116,8 +116,8 @@
       },
       "telescope-newsletter": {
         "git": "https://github.com/TelescopeJS/telescope-newsletter.git",
-        "tag": "v0.1.7",
-        "commit": "5f97c9cc3ed9d89c53a604a6fdf2ae07aa9f0f41"
+        "tag": "v0.1.8",
+        "commit": "dc8c72ee2879e95e511d836b923eebbe6e5d97b5"
       },
       "phantomjs": {
         "git": "https://github.com/gadicohen/meteor-phantomjs.git",
