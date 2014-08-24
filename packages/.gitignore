@@ -40,3 +40,7 @@ i18next-meteor
 /cookies
 /telescope-newsletter
 /phantomjs
+/accounts-entry
+/accounts-t9n
+/simple-form
+/underscore-string-latest

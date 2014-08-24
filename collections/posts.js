@@ -24,12 +24,12 @@ postSchemaObject = {
     type: String,
     optional: true
   },
-  author: {
-    type: String,
+  commentsCount: {
+    type: Number,
     optional: true
   },
-  comments: {
-    type: Number,
+  commenters: {
+    type: [String],
     optional: true
   },
   lastCommentedAt: {
@@ -121,7 +121,7 @@ getPostProperties = function(post) {
     postAuthorName : getDisplayName(postAuthor),
     postTitle : cleanUp(post.title),
     profileUrl: getProfileUrlById(post.userId),
-    postUrl: getPostPageUrl(post._id),
+    postUrl: getPostPageUrl(post),
     thumbnailUrl: post.thumbnailUrl,
     linkUrl: !!post.url ? getOutgoingUrl(post.url) : getPostPageUrl(post._id)
   };

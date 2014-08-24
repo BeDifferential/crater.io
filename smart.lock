@@ -21,7 +21,8 @@
       "synced-cron": {},
       "cookies": {},
       "telescope-newsletter": {},
-      "phantomjs": {}
+      "phantomjs": {},
+      "accounts-entry": {}
     },
     "packages": {
       "momentjs": {
@@ -56,8 +57,8 @@
       },
       "autoform": {
         "git": "https://github.com/aldeed/meteor-autoform.git",
-        "tag": "v0.16.1",
-        "commit": "34a447fd3a1b3164c78f865aabbac3ddc2d033fb"
+        "tag": "v0.17.1",
+        "commit": "a4688e7d77019a68ef43c2a303e905748beeb860"
       },
       "jquery-hotkeys": {
         "git": "https://github.com/terryschen/meteor-jquery-hotkeys.git",
@@ -71,8 +72,8 @@
       },
       "bootstrap3-datepicker": {
         "git": "https://github.com/rajit/bootstrap3-datepicker.git",
-        "tag": "v0.2.1",
-        "commit": "442484eb1c8eb00c6b9e0e9c88accc934cf8f04a"
+        "tag": "v1.3.0-1",
+        "commit": "d28f9193f294890eb8d49f5f3b24e2f2a628e1fa"
       },
       "subs-manager": {
         "git": "https://github.com/meteorhacks/subs-manager.git",
@@ -81,13 +82,13 @@
       },
       "telescope-module-embedly": {
         "git": "https://github.com/TelescopeJS/telescope-module-embedly.git",
-        "tag": "v0.2.6",
-        "commit": "902fde23c137ed8447525920cbd8a5bfa86d7028"
+        "tag": "v0.2.8",
+        "commit": "7bca95848981044967771246ccd3c9e23d5c677d"
       },
       "kadira": {
         "git": "https://github.com/meteorhacks/kadira.git",
-        "tag": "v2.4.12",
-        "commit": "08c1f65bec94094f17f5df3ebd65cfcc298e5368"
+        "tag": "v2.4.13",
+        "commit": "1f3c1a427084af5a2eca2e299eb65bc01387df8a"
       },
       "handlebars-server": {
         "git": "https://github.com/EventedMind/meteor-handlebars-server.git",
@@ -116,13 +117,18 @@
       },
       "telescope-newsletter": {
         "git": "https://github.com/TelescopeJS/telescope-newsletter.git",
-        "tag": "v0.1.8",
-        "commit": "dc8c72ee2879e95e511d836b923eebbe6e5d97b5"
+        "tag": "v0.1.9",
+        "commit": "7720ca3e1b822251800ea661cb74ec6755647e4b"
       },
       "phantomjs": {
         "git": "https://github.com/gadicohen/meteor-phantomjs.git",
         "tag": "v0.0.2",
         "commit": "a72eb79af068dd5d5d617ac71a42bd74e0cb52a4"
+      },
+      "accounts-entry": {
+        "git": "https://github.com/Differential/accounts-entry.git",
+        "tag": "v0.8.1",
+        "commit": "3102c0641cab394ce4c3e54b655c85ec1610c092"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",
@@ -141,8 +147,18 @@
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
-        "tag": "v2.6.0",
-        "commit": "26156df681750fd6e6ed77043eef32b6653ebbdf"
+        "tag": "v2.8.1",
+        "commit": "722ea63783d594341023836b7d418ab2567dab8c"
+      },
+      "accounts-t9n": {
+        "git": "https://github.com/softwarerero/meteor-accounts-t9n.git",
+        "tag": "v0.0.5",
+        "commit": "ad9539a8818049d5d9fa050d8b2a1f62706483b1"
+      },
+      "simple-form": {
+        "git": "https://github.com/Differential/simple-form.git",
+        "tag": "v0.1.8",
+        "commit": "1ea0d3621b333e6f24f37e0e93efd3c081068716"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
@@ -158,6 +174,11 @@
         "git": "https://github.com/EventedMind/iron-dynamic-template.git",
         "tag": "v0.2.1",
         "commit": "4dd1185c4d9d616c9abdb3f33e4a7d5a88db7e18"
+      },
+      "underscore-string-latest": {
+        "git": "https://github.com/TimHeckel/meteor-underscore-string.git",
+        "tag": "v2.3.3",
+        "commit": "4a5d70eee48fbd90a6e6fc78747250d704a0b3bb"
       }
     }
   }

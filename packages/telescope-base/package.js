@@ -15,7 +15,8 @@ Package.on_use(function (api) {
     'addToCommentsSchema', 
     'addToSettingsSchema', 
     'preloadSubscriptions', 
-    'navItems', 
+    'primaryNav', 
+    'secondaryNav', 
     'viewParameters',
     'footerModules',
     'heroModules',
@@ -36,6 +37,8 @@ Package.on_use(function (api) {
     'commentEditClientCallbacks',
     
     'getTemplate',
-    'templates'
+    'templates',
+
+    'themeSettings'
     ]);
 });

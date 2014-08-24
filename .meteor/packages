@@ -30,7 +30,6 @@ telescope-api
 jquery-hotkeys
 marked
 bootstrap3-datepicker
-telescope-theme-hubble
 telescope-module-share
 subs-manager
 telescope-module-embedly
@@ -41,4 +40,8 @@ mailchimp
 synced-cron
 cookies
 telescope-newsletter
+<<<<<<< HEAD
 phantomjs
+telescope-theme-base
+accounts-entry
+telescope-theme-hubble
