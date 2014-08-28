@@ -38,9 +38,13 @@ Schema.User = new SimpleSchema({
 
 Meteor.users.allow({
   update: function(userId, doc){
-  	return isAdminById(userId) || userId == doc._id;
+    return isAdminById(userId) || userId == doc._id;
   },
   remove: function(userId, doc){
-  	return isAdminById(userId) || userId == doc._id;
+    return isAdminById(userId) || userId == doc._id;
   }
 });
+
+if (Meteor.isServer) {
+  Meteor.users._ensureIndex({"profile.notifications.posts": 1});
+}
