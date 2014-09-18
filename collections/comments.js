@@ -1,68 +1,77 @@
-Comments = new Meteor.Collection("comments", {
-  schema: new SimpleSchema({
+CommentSchema = new SimpleSchema({
     _id: {
-      type: String,
-      optional: true
+        type: String,
+        optional: true
     },
     parentCommentId: {
-      type: String,
-      optional: true
+        type: String,
+        optional: true
     },
     createdAt: {
-      type: Date,
-      optional: true
+        type: Date,
+        optional: true
     },
     postedAt: { // for now, comments are always created and posted at the same time
-      type: Date,
-      optional: true
+        type: Date,
+        optional: true
     },
     body: {
-      type: String,
+        type: String
+    },
+    htmlBody: {
+        type: String,
+        optional: true
     },
     baseScore: {
-      type: Number,
-      decimal: true,
-      optional: true
+        type: Number,
+        decimal: true,
+        optional: true
     },
     score: {
-      type: Number,
-      decimal: true,
-      optional: true
+        type: Number,
+        decimal: true,
+        optional: true
     },
     upvotes: {
-      type: Number,
-      optional: true
+        type: Number,
+        optional: true
     },
     upvoters: {
-      type: [String], // XXX
-      optional: true
+        type: [String], // XXX
+        optional: true
     },
     downvotes: {
-      type: Number,
-      optional: true
+        type: Number,
+        optional: true
     },
     downvoters: {
-      type: [String], // XXX
-      optional: true
+        type: [String], // XXX
+        optional: true
     },
     author: {
-      type: String,
-      optional: true
+        type: String,
+        optional: true
     },
     inactive: {
-      type: Boolean,
-      optional: true
+        type: Boolean,
+        optional: true
     },
     postId: {
-      type: String, // XXX
-      optional: true
+        type: String, // XXX
+        optional: true
     },
     userId: {
-      type: String, // XXX
-      optional: true
+        type: String, // XXX
+        optional: true
+    },
+    isDeleted: {
+        type: Boolean,
+        optional: true
     }
-  })
 });
+
+Comments = new Meteor.Collection("comments");
+Comments.attachSchema(CommentSchema);
 
 Comments.deny({
   update: function(userId, post, fieldNames) {
@@ -74,21 +83,29 @@ Comments.deny({
 });
 
 Comments.allow({
-  insert: canCommentById,
   update: canEditById,
   remove: canEditById
 });
 
+Comments.before.insert(function (userId, doc) {
+  if(Meteor.isServer)
+    doc.htmlBody = sanitize(marked(doc.body));
+});
 
-
+Comments.before.update(function (userId, doc, fieldNames, modifier, options) {
+  // if body is being modified, update htmlBody too
+  if (Meteor.isServer && modifier.$set && modifier.$set.body) {
+    modifier.$set = modifier.$set || {};
+    modifier.$set.htmlBody = sanitize(marked(modifier.$set.body));
+  }
+});
 
 Meteor.methods({
   comment: function(postId, parentCommentId, text){
     var user = Meteor.user(),
-        post=Posts.findOne(postId),
-        postUser=Meteor.users.findOne(post.userId),
-        timeSinceLastComment=timeSinceLast(user, Comments),
-        cleanText= cleanUp(text),
+        post = Posts.findOne(postId),
+        postUser = Meteor.users.findOne(post.userId),
+        timeSinceLastComment = timeSinceLast(user, Comments),
         commentInterval = Math.abs(parseInt(getSetting('commentInterval',15))),
         now = new Date();
 
@@ -101,12 +118,12 @@ Meteor.methods({
       throw new Meteor.Error(704, i18n.t('Please wait ')+(commentInterval-timeSinceLastComment)+i18n.t(' seconds before commenting again'));
 
     // Don't allow empty comments
-    if (!cleanText)
+    if (!text)
       throw new Meteor.Error(704,i18n.t('Your comment is empty.'));
           
     var comment = {
       postId: postId,
-      body: cleanText,
+      body: text,
       userId: user._id,
       createdAt: now,
       postedAt: now,
@@ -123,7 +140,9 @@ Meteor.methods({
     var newCommentId=Comments.insert(comment);
 
     // increment comment count
-    Meteor.users.update({_id: user._id}, {$inc: {commentCount: 1}});
+    Meteor.users.update({_id: user._id}, {
+      $inc:       {'data.commentsCount': 1}
+    });
 
     // extend comment with newly created _id
     comment = _.extend(comment, {_id: newCommentId});
@@ -139,13 +158,13 @@ Meteor.methods({
     var notificationProperties = {
       comment: _.pick(comment, '_id', 'userId', 'author', 'body'),
       post: _.pick(post, '_id', 'title', 'url')
-    }
+    };
 
     if(!this.isSimulation){
       if(parentCommentId){
         // child comment
-        var parentComment=Comments.findOne(parentCommentId);
-        var parentUser=Meteor.users.findOne(parentComment.userId);
+        var parentComment = Comments.findOne(parentCommentId);
+        var parentUser = Meteor.users.findOne(parentComment.userId);
 
         notificationProperties.parentComment = _.pick(parentComment, '_id', 'userId', 'author');
 
@@ -169,7 +188,7 @@ Meteor.methods({
     return comment;
   },
   removeComment: function(commentId){
-    var comment=Comments.findOne(commentId);
+    var comment = Comments.findOne(commentId);
     if(canEdit(Meteor.user(), comment)){
       // decrement post comment count and remove user ID from post
       Posts.update(comment.postId, {
@@ -177,11 +196,19 @@ Meteor.methods({
         $pull:  {commenters: comment.userId}
       });
 
-      // decrement user comment count
-      Meteor.users.update({_id: comment.userId}, {$inc: {commentCount: -1}});
+      // decrement user comment count and remove comment ID from user
+      Meteor.users.update({_id: comment.userId}, {
+        $inc:   {'data.commentsCount': -1}
+      });
 
       // note: should we also decrease user's comment karma ?
-      Comments.remove(commentId);
+      // We don't actually delete the comment to avoid losing all child comments.
+      // Instead, we give it a special flag
+      Comments.update({_id: commentId}, {$set: {
+        body: 'Deleted',
+        htmlBody: 'Deleted',
+        isDeleted: true
+      }});
     }else{
       throwError("You don't have permission to delete this comment.");
     }

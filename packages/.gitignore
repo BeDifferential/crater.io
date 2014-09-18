@@ -1,31 +1,5 @@
-router
-momentjs
-database-forms
-paginated-subscription
-crypto-md5
-page-js-ie-support
-HTML5-History-API
-crypto-base
-iron-router
-nprogress
-i18next-meteor
-/momentjs
-/crypto-base
-/database-forms
-/crypto-md5
-/iron-router
-/nprogress
-/fast-render
-/spin
-/blaze-layout
-/autoform
-/simple-schema
-/collection2
-/moment
-/iron-router-progress
-/jquery-hotkeys
-/marked
 /bootstrap3-datepicker
+<<<<<<< HEAD
 /subs-manager
 /telescope-module-embedly
 /telescope-recently-commented
@@ -44,3 +18,6 @@ i18next-meteor
 /accounts-t9n
 /simple-form
 /underscore-string-latest
+=======
+/npm-container
+>>>>>>> 3fda433082d9cceb3b161bd128b3742cdd296bf2

@@ -6,7 +6,13 @@ Accounts.onCreateUser(function(options, user){
     isAdmin: false,
     postCount: 0,
     commentCount: 0,
-    invitedCount: 0
+    invitedCount: 0,
+    votes: {
+      upvotedPosts: [],
+      downvotedPosts: [],
+      upvotedComments: [],
+      downvotedComments: []
+    }
   };
   user = _.extend(user, userProperties);
 
@@ -73,8 +79,8 @@ Accounts.onCreateUser(function(options, user){
       var emailProperties = {
         profileUrl: getProfileUrl(user),
         username: getUserName(user)
-      }
-      var html = Handlebars.templates[getTemplate('emailNewUser')](emailProperties);
+      };
+      var html = getEmailTemplate('emailNewUser')(emailProperties);
       sendEmail(getEmail(admin), 'New user account: '+getUserName(user), buildEmailTemplate(html));
     }
   });
@@ -82,10 +88,6 @@ Accounts.onCreateUser(function(options, user){
   return user;
 });
 
-getEmailHash = function(user){
-  // todo: add some kind of salt in here
-  return CryptoJS.MD5(getEmail(user).trim().toLowerCase() + user.createdAt).toString();
-};
 
 Meteor.methods({
   changeEmail: function(newEmail) {
@@ -96,9 +98,6 @@ Meteor.methods({
   },
   numberOfCommentsToday: function(){
     console.log(numberOfItemsInPast24Hours(Meteor.user(), Comments));
-  },
-  testEmail: function(){
-    Email.send({from: 'test@test.com', to: getEmail(Meteor.user()), subject: 'Telescope email test', text: 'lorem ipsum dolor sit amet.'});
   },
   testBuffer: function(){
     // TODO
@@ -111,7 +110,7 @@ Meteor.methods({
     return Math.abs(object.score - newScore);
   },
   setEmailHash: function(user){
-    var email_hash = CryptoJS.MD5(getEmail(user).trim().toLowerCase()).toString();
-    Meteor.users.update(user._id, {$set : {email_hash : email_hash}});
+    var hash = getEmailHash(user);
+    Meteor.users.update(user._id, {$set : {email_hash : hash}});
   }
 });

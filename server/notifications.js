@@ -33,21 +33,20 @@ buildEmailNotification = function (notification) {
 
   // console.log(emailProperties)
 
-  var notificationHtml = Handlebars.templates[getTemplate(template)](emailProperties);
+  var notificationHtml = getEmailTemplate(template)(emailProperties);
   var html = buildEmailTemplate(notificationHtml);
 
   return {
     subject: subject,
     html: html
   }
-}
+};
 
 newPostNotification = function(post, excludedIDs){
-  
   var excludedIDs = typeof excludedIDs == 'undefined' ? [] : excludedIDs;
   var p = getPostProperties(post);
   var subject = p.postAuthorName+' has created a new post: '+p.postTitle;
-  var html = buildEmailTemplate(Handlebars.templates[getTemplate('emailNewPost')](p));
+  var html = buildEmailTemplate(getEmailTemplate('emailNewPost')(p));
 
   // send a notification to every user according to their notifications settings
   Meteor.users.find({'profile.notifications.posts': 1}).forEach(function(user) {
@@ -55,7 +54,7 @@ newPostNotification = function(post, excludedIDs){
     if(excludedIDs.indexOf(user._id) == -1)
       sendEmail(getEmail(user), subject, html);
   });
-}
+};
 
 Meteor.methods({
   unsubscribeUser : function(hash){
