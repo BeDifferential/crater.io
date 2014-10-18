@@ -1,3 +1,43 @@
+## v0.9.8
+
+* Fixing #457 (pending posts view not working).
+* Added German translation (thanks @Helmi!).
+* Added `?q=` parameter to searches (thanks @yourcelf!).
+* Abstracting `isAdmin` (thanks @yourcelsf!).
+* Refactoring `getPostsParameters` (thanks @delgermurun!).
+* Using `bengott:avatar` package for avatars (thanks @bengott!).
+* Upgrading to Meteor 0.9.3.1.
+
+## v0.9.7 “SettingsScope”
+
+* Updating to Meteor 0.9.3.
+* Improving RSS feed (thanks @delgermurun!).
+* Fixed redirection issues on sign-up (thanks @steffenstraetz!)
+* Fixed bug on Twitter sign-in.
+* Splitting up the settings form into sub-sections.
+* Adding help text to settings form.
+* Fixing problem with daily view theming.
+* Improving avatar stuff (thanks @shaialon and @bengott!). 
+
+## v0.9.6
+
+* Fixed security hole in user update. 
+* Kadira is now included by default. 
+* Comments now have their own feed (thanks @delgermurun!).
+* Fixed URL collision bug (thanks @GoodEveningMiss!).
+* Now using [`account-templates`](https://github.com/splendido/accounts-templates-core) (thanks @splendido!).
+* Retinizing avatar sizes (thanks @shaialon!).
+
+## v0.9.5 “FixScope”
+
+* Fixed `/settings` bug (thanks @steffenstraetz!).
+* Code cleanup (thanks @wulfmeister!).
+* Fixed upvote/downvote concurrency bug (thanks @spifd!).
+* Renamed `SubmitServerCallbacks` to `SubmitMethodCallbacks` for posts and comments.
+* Added `AfterSubmitMethodCallbacks` for posts and comments.
+* Made notifications into their own `telescope-notifications` package.
+* `telescope-update-prompt` package now sends user, post, and comment count when phoning home.
+
 ## v0.9.4 “UpdateScope”
 
 * Removed unneeded allow insert on Posts and Comments. 

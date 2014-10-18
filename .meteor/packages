@@ -8,7 +8,6 @@
 standard-app-packages
 backbone
 accounts-base
-accounts-ui
 accounts-password
 accounts-twitter
 spiderable
@@ -33,15 +32,16 @@ mrt:moment
 mrt:mailchimp
 
 cmather:handlebars-server@0.2.0
-tmeasday:crypto-md5@3.1.2
 sacha:spin@2.0.4
 sacha:juice
 chuangbo:marked@0.3.3
 percolatestudio:synced-cron@0.1.1
-joshowens:accounts-entry@0.9.0
-
-# Atmosphere Packages (Old)
-
+npm-container
+matb33:collection-hooks
+djedi:sanitize-html
+rajit:bootstrap3-datepicker
+bengott:avatar
+jparker:gravatar
 
 # Telescope Packages
 
@@ -59,12 +59,14 @@ telescope-newsletter
 telescope-module-embedly
 telescope-i18n
 telescope-email
-
-
-npm-container
-matb33:collection-hooks
-djedi:sanitize-html
-rajit:bootstrap3-datepicker
 telescope-update-prompt
-meteorhacks:kadira
+telescope-notifications
+telescope-kadira
+telescope-update-prompt
+telescope-notifications
+telescope-kadira
 
+# Accounts Templates
+service-configuration
+accounts-ui
+splendido:accounts-templates-unstyled

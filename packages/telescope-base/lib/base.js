@@ -62,7 +62,10 @@ viewParameters.best = function (terms) {
 
 viewParameters.pending = function (terms) {
   return {
-    find: {status: 1}, 
+    find: {
+      status: 1, 
+      postedAt: {$lte: null}
+    }, 
     options: {sort: {createdAt: -1}}
   };
 }
@@ -147,15 +150,23 @@ postMeta = [
 
 postSubmitRenderedCallbacks = [];
 postSubmitClientCallbacks = [];
-postSubmitServerCallbacks = [];
+postSubmitMethodCallbacks = [];
+postAfterSubmitMethodCallbacks = [];
 
 postEditRenderedCallbacks = [];
 postEditClientCallbacks = [];
+postEditMethodCallbacks = []; // not used yet
+postAfterMethodCallbacks = []; // not used yet
 
-commentEditClientCallbacks = []; // not used yet
-commentEditServerCallbacks = []; // not used yet
+commentSubmitRenderedCallbacks = [];
+commentSubmitClientCallbacks = [];
+commentSubmitMethodCallbacks = [];
+commentAfterSubmitMethodCallbacks = [];
 
-commentEditClientCallbacks = []; // not used yet
+commentEditRenderedCallbacks = []; 
+commentEditClientCallbacks = [];
+commentEditMethodCallbacks = []; // not used yet
+commentAfterEditMethodCallbacks = []; // not used yet
 
 // ------------------------------ Dynamic Templates ------------------------------ //
 
