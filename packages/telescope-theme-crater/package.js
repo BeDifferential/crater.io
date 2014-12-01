@@ -6,21 +6,113 @@ Package.onUse(function (api) {
 
   api.use(['templating', 'less'], 'client');
 
-  api.add_files([
+  api.addFiles([
     'lib/crater.js',
   ], ['client', 'server']);
 
-  api.add_files([
-    'lib/client/stylesheets/variables.import.less',
-    'lib/client/stylesheets/mixins.import.less',
-    'lib/client/stylesheets/lib/avatars.import.less',
-    'lib/client/stylesheets/lib/buttons.import.less',
-    'lib/client/stylesheets/lib/forms.import.less',
-    'lib/client/stylesheets/lib/typography.import.less',
+  // Bootstrap - Base
+  api.addFiles([
+    'lib/client/stylesheets/lib/bootstrap/alerts.import.less',
+    'lib/client/stylesheets/lib/bootstrap/badges.import.less',
+    'lib/client/stylesheets/lib/bootstrap/bootstrap.import.less',
+    'lib/client/stylesheets/lib/bootstrap/breadcrumbs.import.less',
+    'lib/client/stylesheets/lib/bootstrap/button-groups.import.less',
+    'lib/client/stylesheets/lib/bootstrap/buttons.import.less',
+    'lib/client/stylesheets/lib/bootstrap/close.import.less',
+    'lib/client/stylesheets/lib/bootstrap/code.import.less',
+    'lib/client/stylesheets/lib/bootstrap/component-animations.import.less',
+    'lib/client/stylesheets/lib/bootstrap/dropdowns.import.less',
+    'lib/client/stylesheets/lib/bootstrap/forms.import.less',
+    'lib/client/stylesheets/lib/bootstrap/glyphicons.import.less',
+    'lib/client/stylesheets/lib/bootstrap/grid.import.less',
+    'lib/client/stylesheets/lib/bootstrap/input-groups.import.less',
+    'lib/client/stylesheets/lib/bootstrap/jumbotron.import.less',
+    'lib/client/stylesheets/lib/bootstrap/labels.import.less',
+    'lib/client/stylesheets/lib/bootstrap/list-group.import.less',
+    'lib/client/stylesheets/lib/bootstrap/media.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins.import.less',
+    'lib/client/stylesheets/lib/bootstrap/modals.import.less',
+    'lib/client/stylesheets/lib/bootstrap/navbar.import.less',
+    'lib/client/stylesheets/lib/bootstrap/navs.import.less',
+    'lib/client/stylesheets/lib/bootstrap/normalize.import.less',
+    'lib/client/stylesheets/lib/bootstrap/pager.import.less',
+    'lib/client/stylesheets/lib/bootstrap/pagination.import.less',
+    'lib/client/stylesheets/lib/bootstrap/panels.import.less',
+    'lib/client/stylesheets/lib/bootstrap/popovers.import.less',
+    'lib/client/stylesheets/lib/bootstrap/print.import.less',
+    'lib/client/stylesheets/lib/bootstrap/progress-bars.import.less',
+    'lib/client/stylesheets/lib/bootstrap/responsive-embed.import.less',
+    'lib/client/stylesheets/lib/bootstrap/responsive-utilities.import.less',
+    'lib/client/stylesheets/lib/bootstrap/scaffolding.import.less',
+    'lib/client/stylesheets/lib/bootstrap/tables.import.less',
+    'lib/client/stylesheets/lib/bootstrap/thumbnails.import.less',
+    'lib/client/stylesheets/lib/bootstrap/tooltip.import.less',
+    'lib/client/stylesheets/lib/bootstrap/type.import.less',
+    'lib/client/stylesheets/lib/bootstrap/utilities.import.less',
+    'lib/client/stylesheets/lib/bootstrap/variables.import.less',
+    'lib/client/stylesheets/lib/bootstrap/wells.import.less'
+  ], ['client']);
+
+  // Bootstrap Mixins
+  api.addFiles([
+    'lib/client/stylesheets/lib/bootstrap/mixins/alerts.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/background-variant.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/border-radius.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/buttons.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/center-block.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/clearfix.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/forms.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/gradients.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/grid-framework.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/grid.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/hide-text.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/image.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/labels.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/list-group.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/nav-divider.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/nav-vertical-align.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/opacity.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/pagination.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/panels.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/progress-bar.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/reset-filter.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/resize.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/responsive-visibility.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/size.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/tab-focus.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/table-row.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/text-emphasis.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/text-overflow.import.less',
+    'lib/client/stylesheets/lib/bootstrap/mixins/vendor-prefixes.import.less'
+  ], ['client']);
+
+  // Custom CSS - Base
+  api.addFiles([
+    'lib/client/stylesheets/base/variables.import.less',
+    'lib/client/stylesheets/base/mixins.import.less',
+    'lib/client/stylesheets/base/type.import.less',
     'lib/client/stylesheets/crater.less'
   ], ['client']);
 
-  api.add_files([
+  // Custom CSS - Components
+  api.addFiles([
+    'lib/client/stylesheets/components/avatars.less',
+    'lib/client/stylesheets/components/buttons.less',
+    'lib/client/stylesheets/components/forms.less',
+    'lib/client/stylesheets/components/newsletter-banner.less',
+    'lib/client/stylesheets/components/post-item.less',
+    'lib/client/stylesheets/components/update-banner.less'
+  ], ['client']);
+
+  // Custom CSS - Layout
+  api.addFiles([
+    'lib/client/stylesheets/layout/content.less',
+    'lib/client/stylesheets/layout/header.less',
+    'lib/client/stylesheets/layout/nav.less'
+  ], ['client']);
+
+  // Custom Templates
+  api.addFiles([
     'lib/client/templates/posts/modules/post_comments_link.html',
     'lib/client/templates/posts/modules/post_discuss.html',
     'lib/client/templates/posts/modules/post_domain.html',
@@ -33,6 +125,7 @@ Package.onUse(function (api) {
     'lib/client/templates/nav/submit_button.html'
   ], ['client']);
 
+  // Custom Configuration
   api.export([
     'viewNav',
     'postHeading',

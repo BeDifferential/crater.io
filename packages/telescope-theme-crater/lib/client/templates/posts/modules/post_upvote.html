@@ -1,11 +1,11 @@
 <template name="craterPostUpvote">
   {{#if upvoted}}
-    <a class="upvote-link voted button button-primary">
+    <a class="upvote-link voted btn btn-primary">
       <i class="icon ion-checkmark"></i>
       <div class="post-rank"><span>{{oneBasedRank}}</span></div>
     </a>
   {{else}}
-    <a class="upvote-link not-voted button" href="#">
+    <a class="upvote-link not-voted btn" href="#">
       <i class="icon ion-arrow-up-c"></i>
       <div class="post-rank"><span>{{oneBasedRank}}</span></div>
     </a>

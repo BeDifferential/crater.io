@@ -1,0 +1,16 @@
+@import '../base/mixins.import.less';
+@import '../base/variables.import.less';
+
+.btn {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.btn-primary {
+  #gradient > .vertical(@start-color: @brand-primary; @end-color: @brand-secondary);
+
+  &:hover {
+    #gradient > .vertical(@start-color: @brand-secondary; @end-color: @brand-primary);
+  }
+}

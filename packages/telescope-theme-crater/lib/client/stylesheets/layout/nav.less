@@ -1,0 +1,18 @@
+@import '../base/mixins.import.less';
+@import '../base/variables.import.less';
+
+.mobile-nav {
+  display: none;
+}
+
+nav#main-nav {
+  width: 100px;
+  padding: 12px;
+  #gradient > .vertical(@start-color: @brand-primary; @end-color: @brand-secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  overflow: hidden;
+}

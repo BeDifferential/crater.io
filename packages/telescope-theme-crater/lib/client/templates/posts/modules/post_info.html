@@ -3,12 +3,12 @@
     <a class="post-author" href="{{profileUrl}}"><i class="icon ion-ios7-person"></i> {{authorName}}</a>
   </div>
   <div class="post-meta-item post-meta-time">
-    <span class="post-time"><i class="icon ion-ios7-clock-outline"></i> {{ago}}</span>
+    <span class="post-time"><i class="icon ion-ios7-clock-outline"></i> {{timeAgo ago}}</span>
   </div>
 
   {{#if can_edit}}
     <div class="post-meta-item post-meta-edit">
-      <a href="/posts/{{_id}}/edit" class="edit-link goto-edit">Edit</a>
+      <a href="/posts/{{_id}}/edit" class="edit-link goto-edit">{{_ "edit"}}</a>
     </div>
   {{/if}}
 
