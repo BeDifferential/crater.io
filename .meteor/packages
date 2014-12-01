@@ -52,14 +52,11 @@ telescope-lib
 telescope-rss
 telescope-api
 telescope-module-share
-telescope-theme-base
-telescope-theme-hubble
 telescope-daily
 telescope-newsletter
 telescope-module-embedly
 telescope-i18n
 telescope-email
-
 
 npm-container
 matb33:collection-hooks
@@ -68,3 +65,9 @@ rajit:bootstrap3-datepicker
 telescope-update-prompt
 meteorhacks:kadira
 
+
+# Crater.io Theme
+
+less
+mrt:ionicons
+telescope-theme-crater
