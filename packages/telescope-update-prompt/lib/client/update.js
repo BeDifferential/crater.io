@@ -4,7 +4,7 @@ compareVersions = function (v1, v2) { // return true if v2 is newer than v1
   // go through each segment of v2 and stop if we find one that's higher
   // than the equivalent segment of v1; else return false
   return v2Array.some( function (value, index) {
-    return value > v1Array[index];
+    return parseInt(value) > parseInt(v1Array[index]);
   });
   return false;
 }
@@ -12,26 +12,18 @@ compareVersions = function (v1, v2) { // return true if v2 is newer than v1
 Meteor.startup(function () {
   Session.set('updateVersion', null);
 
-  if(Meteor.user() && isAdmin(Meteor.user())){
-    var url = 'http://version.telescopeapp.org/';
-    HTTP.get(url, {
-      params: {
-        currentVersion: telescopeVersion,
-        siteTitle: getSetting('title'),
-        siteUrl: getSiteUrl()
+  Meteor.call('phoneHome', function (error, result) {
+    // console.log(error)
+    // console.log(result)
+    if(result){
+      var currentVersion = telescopeVersion;
+      var newVersion = result.content;
+      var message = "";
+      if (compareVersions(currentVersion, newVersion)){
+        Session.set('updateVersion', newVersion);
       }
-    }, function (error, result) {
-      if(result){
-        // console.log(result);
-        var currentVersion = telescopeVersion;
-        var newVersion = result.content;
-        var message = "";
-        if (compareVersions(currentVersion, newVersion)){
-          Session.set('updateVersion', newVersion);
-        }
-      }
-    });
-  }
+    }
+  });
 });
 
 heroModules.push({

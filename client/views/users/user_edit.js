@@ -40,24 +40,24 @@ Template[getTemplate('user_edit')].events({
 
     clearSeenErrors();
     if(!Meteor.user())
-      throwError(i18n.t('You must be logged in.'));
+      throwError(i18n.t('you_must_be_logged_in'));
 
     var $target=$(e.target);
     var name = $target.find('[name=name]').val();
+    var email = $target.find('[name=email]').val();
     var user = this;
     var update = {
       "profile.name": name,
       "profile.slug": slugify(name),
       "profile.bio": $target.find('[name=bio]').val(),
-      "profile.email": $target.find('[name=email]').val(),
+      "profile.email": email,
       "profile.twitter": $target.find('[name=twitter]').val(),
       "profile.github": $target.find('[name=github]').val(),
       "profile.site": $target.find('[name=site]').val(),
       "profile.notifications.users": $('input[name=notifications_users]:checked').length, // only actually used for admins
       "profile.notifications.posts": $('input[name=notifications_posts]:checked').length,
       "profile.notifications.comments": $('input[name=notifications_comments]:checked').length,
-      "profile.notifications.replies": $('input[name=notifications_replies]:checked').length,
-      "inviteCount": parseInt($target.find('[name=inviteCount]').val())
+      "profile.notifications.replies": $('input[name=notifications_replies]:checked').length
     };
 
     var old_password = $target.find('[name=old_password]').val();
@@ -77,7 +77,7 @@ Template[getTemplate('user_edit')].events({
       if(error){
         throwError(error.reason);
       } else {
-        throwError(i18n.t('Profile updated'));
+        throwError(i18n.t('profile_updated'));
       }
       Deps.afterFlush(function() {
         var element = $('.grid > .error');
@@ -85,7 +85,7 @@ Template[getTemplate('user_edit')].events({
       });
     });
 
-    Meteor.call('setEmailHash', user);
+    Meteor.call('changeEmail', email);
 
   }
 

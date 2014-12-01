@@ -1,3 +1,61 @@
+## v0.9.10 “i18nScope”
+
+* Now using [tap:i18n](https://github.com/TAPevents/tap-i18n) for internationalization (thanks a ton to @theosp).
+* Each package is now i18n'd invididually.
+* Chinese i18n code is now `zh-CN`, not `zh`.
+* Various fixes (thanks @anthonymayer).
+* Upgrade Avatar package (thanks @bengott).
+
+## v0.9.9
+
+* Updating to Meteor 1.0.
+* Updating to Iron Router 1.0.
+* Adding view counter (thanks @steffenstraetz! See [PR #489](https://github.com/TelescopeJS/Telescope/pull/489))
+* Splitting out `router.js` in multiple files.
+* URL can now be removed when editing a post (thanks @massimilianomarini! See [PR 484](https://github.com/TelescopeJS/Telescope/pull/484)).
+* Now waiting on `allUsersAdmin` subscription for post submit page (thanks @kai101! See [PR 508](https://github.com/TelescopeJS/Telescope/pull/508))
+* Putting server-side routes for email template tests in their own respective packages.
+
+## v0.9.8
+
+* Fixing #457 (pending posts view not working).
+* Added German translation (thanks @Helmi!).
+* Added `?q=` parameter to searches (thanks @yourcelf!).
+* Abstracting `isAdmin` (thanks @yourcelsf!).
+* Refactoring `getPostsParameters` (thanks @delgermurun!).
+* Using `bengott:avatar` package for avatars (thanks @bengott!).
+* Upgrading to Meteor 0.9.3.1.
+
+## v0.9.7 “SettingsScope”
+
+* Updating to Meteor 0.9.3.
+* Improving RSS feed (thanks @delgermurun!).
+* Fixed redirection issues on sign-up (thanks @steffenstraetz!)
+* Fixed bug on Twitter sign-in.
+* Splitting up the settings form into sub-sections.
+* Adding help text to settings form.
+* Fixing problem with daily view theming.
+* Improving avatar stuff (thanks @shaialon and @bengott!). 
+
+## v0.9.6
+
+* Fixed security hole in user update. 
+* Kadira is now included by default. 
+* Comments now have their own feed (thanks @delgermurun!).
+* Fixed URL collision bug (thanks @GoodEveningMiss!).
+* Now using [`account-templates`](https://github.com/splendido/accounts-templates-core) (thanks @splendido!).
+* Retinizing avatar sizes (thanks @shaialon!).
+
+## v0.9.5 “FixScope”
+
+* Fixed `/settings` bug (thanks @steffenstraetz!).
+* Code cleanup (thanks @wulfmeister!).
+* Fixed upvote/downvote concurrency bug (thanks @spifd!).
+* Renamed `SubmitServerCallbacks` to `SubmitMethodCallbacks` for posts and comments.
+* Added `AfterSubmitMethodCallbacks` for posts and comments.
+* Made notifications into their own `telescope-notifications` package.
+* `telescope-update-prompt` package now sends user, post, and comment count when phoning home.
+
 ## v0.9.4 “UpdateScope”
 
 * Removed unneeded allow insert on Posts and Comments. 

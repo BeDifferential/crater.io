@@ -27,14 +27,14 @@ Template[getTemplate('posts_digest')].helpers({
     var today=moment(new Date());
     var diff=today.diff(currentDate, 'days');
     if(diff === 0)
-      return i18n.t("Today");
+      return i18n.t("today");
     if(diff === 1)
-      return i18n.t("Yesterday");
+      return i18n.t("yesterday");
     return currentDate.format("dddd, MMMM Do YYYY");
   },
   previousDateURL: function(){
     var currentDate=moment(Session.get('currentDate'));
-    var newDate=currentDate.subtract('days', 1);
+    var newDate=currentDate.subtract(1, 'days');
     return getDigestURL(newDate);
   },
   showPreviousDate: function(){

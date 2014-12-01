@@ -20,20 +20,20 @@ adminNav = [];
 viewNav = [
   {
     route: 'posts_top',
-    label: 'Top'
+    label: 'top'
   },
   {
     route: 'posts_new',
-    label: 'New'
+    label: 'new'
   },
   {
     route: 'posts_best',
-    label: 'Best'
+    label: 'best'
   },
   {
-    route: 'posts_digest',
-    label: 'Digest'
-  } 
+    route: 'posts_digest_default',
+    label: 'digest'
+  }
 ];
 
 // ------------------------------------- Views -------------------------------- //
@@ -62,7 +62,10 @@ viewParameters.best = function (terms) {
 
 viewParameters.pending = function (terms) {
   return {
-    find: {status: 1}, 
+    find: {
+      status: 1,
+      postedAt: {$lte: null}
+    },
     options: {sort: {createdAt: -1}}
   };
 }
@@ -71,7 +74,7 @@ viewParameters.digest = function (terms) {
   return {
     find: {
       postedAt: {
-        $gte: terms.after, 
+        $gte: terms.after,
         $lt: terms.before
       }
     },
@@ -109,7 +112,7 @@ postModules = [
     position: 'left-right'
   },
   {
-    template: 'postContent', 
+    template: 'postContent',
     position: 'center-center'
   },
   {
@@ -124,7 +127,7 @@ postHeading = [
     order: 1
   },
   {
-    template: 'postDomain', 
+    template: 'postDomain',
     order: 5
   }
 ]
@@ -137,9 +140,9 @@ postMeta = [
   {
     template: 'postCommentsLink',
     order: 3
-  },  
+  },
   {
-    template: 'postAdmin', 
+    template: 'postAdmin',
     order: 5
   }
 ]
@@ -147,15 +150,23 @@ postMeta = [
 
 postSubmitRenderedCallbacks = [];
 postSubmitClientCallbacks = [];
-postSubmitServerCallbacks = [];
+postSubmitMethodCallbacks = [];
+postAfterSubmitMethodCallbacks = [];
 
 postEditRenderedCallbacks = [];
 postEditClientCallbacks = [];
+postEditMethodCallbacks = []; // not used yet
+postAfterMethodCallbacks = []; // not used yet
 
-commentEditClientCallbacks = []; // not used yet
-commentEditServerCallbacks = []; // not used yet
+commentSubmitRenderedCallbacks = [];
+commentSubmitClientCallbacks = [];
+commentSubmitMethodCallbacks = [];
+commentAfterSubmitMethodCallbacks = [];
 
-commentEditClientCallbacks = []; // not used yet
+commentEditRenderedCallbacks = [];
+commentEditClientCallbacks = [];
+commentEditMethodCallbacks = []; // not used yet
+commentAfterEditMethodCallbacks = []; // not used yet
 
 // ------------------------------ Dynamic Templates ------------------------------ //
 
