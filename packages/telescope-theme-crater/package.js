@@ -53,7 +53,7 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/lib/bootstrap/wells.import.less'
   ], ['client']);
 
-  // Bootstrap Mixins
+  // Bootstrap - Mixins
   api.addFiles([
     'lib/client/stylesheets/lib/bootstrap/mixins/alerts.import.less',
     'lib/client/stylesheets/lib/bootstrap/mixins/background-variant.import.less',
@@ -96,28 +96,33 @@ Package.onUse(function (api) {
 
   // Custom CSS - Components
   api.addFiles([
-    'lib/client/stylesheets/components/avatars.less',
-    'lib/client/stylesheets/components/buttons.less',
-    'lib/client/stylesheets/components/forms.less',
-    'lib/client/stylesheets/components/newsletter-banner.less',
-    'lib/client/stylesheets/components/post-item.less',
-    'lib/client/stylesheets/components/update-banner.less'
+    'lib/client/stylesheets/components/avatars.import.less',
+    'lib/client/stylesheets/components/buttons.import.less',
+    'lib/client/stylesheets/components/forms.import.less',
+    'lib/client/stylesheets/components/newsletter-banner.import.less',
+    'lib/client/stylesheets/components/post-detail.import.less',
+    'lib/client/stylesheets/components/post-item.import.less',
+    'lib/client/stylesheets/components/telescope.import.less',
+    'lib/client/stylesheets/components/update-banner.import.less'
   ], ['client']);
 
   // Custom CSS - Layout
   api.addFiles([
-    'lib/client/stylesheets/layout/content.less',
-    'lib/client/stylesheets/layout/header.less',
-    'lib/client/stylesheets/layout/nav.less'
+    'lib/client/stylesheets/layout/content.import.less',
+    'lib/client/stylesheets/layout/header.import.less',
+    'lib/client/stylesheets/layout/nav.import.less'
   ], ['client']);
 
   // Custom Templates
   api.addFiles([
+    'lib/client/templates/posts/modules/post_admin.html',
+    'lib/client/templates/posts/modules/post_categories.html',
     'lib/client/templates/posts/modules/post_comments_link.html',
     'lib/client/templates/posts/modules/post_discuss.html',
     'lib/client/templates/posts/modules/post_domain.html',
     'lib/client/templates/posts/modules/post_info.html',
     'lib/client/templates/posts/modules/post_upvote.html',
+    'lib/client/templates/posts/post_body.html',
     'lib/client/templates/posts/posts_load_more.html',
     'lib/client/templates/nav/header.html',
     'lib/client/templates/nav/header.js',

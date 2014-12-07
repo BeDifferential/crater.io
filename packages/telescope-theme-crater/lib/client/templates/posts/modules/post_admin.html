@@ -1,0 +1,17 @@
+<template name="craterPostAdmin">
+  {{#if isAdmin}}
+    <div class="post-meta-item post-admin">
+      {{#if postsMustBeApproved}}
+        {{#if isApproved}}
+          <a href="#" class="unapprove-link goto-edit"><i class="icon ion-ios7-close-empty"></i> {{_ "unapprove"}}</a>
+        {{else}}
+          <a href="#" class="approve-link goto-edit"><i class="icon ion-ios7-checkmark-empty"></i> {{_ "approve"}}</a>
+        {{/if}}
+      {{/if}}
+
+      <span class="label label-primary"><i class="icon ion-ios7-star"></i> {{shortScore}}</span>
+      <span class="label label-primary"><i class="icon ion-ios7-upload-outline"></i> {{clickCount}}</span>
+      <span class="label label-primary"><i class="icon ion-ios7-eye-outline"></i> {{viewCount}}</span>
+    </div>
+  {{/if}}
+</template>

@@ -11,12 +11,27 @@ viewNav = [
   }
 ];
 
+postModules = [
+{
+  template: 'postUpvote',
+  position: 'left-left'
+},
+{
+  template: 'postContent',
+  position: 'center-center'
+},
+{
+  template: 'postDiscuss',
+  position: 'right-right'
+}
+];
+
 postHeading = [
   {
     template: 'postTitle',
     order: 1
   }
-]
+];
 
 postMeta = [
   {
@@ -31,16 +46,20 @@ postMeta = [
     template: 'postAdmin',
     order: 5
   }
-]
+];
 
 templates['nav'] = 'craterNav';
 
+templates['postActions'] = 'craterPostActions';
+templates['postAdmin'] = 'craterPostAdmin';
+templates['postCategories'] = 'craterPostCategories';
 templates['postCommentsLink'] = 'craterPostCommentsLink';
 templates['postDiscuss'] = 'craterPostDiscuss';
 templates['postDomain'] = 'craterPostDomain';
 templates['postInfo'] = 'craterPostInfo';
 templates['postUpvote'] = 'craterPostUpvote';
 
+templates['post_body'] = 'craterPostBody';
 templates['postsLoadMore'] = 'craterPostsLoadMore';
 
 heroModules.unshift({

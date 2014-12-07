@@ -1,0 +1,39 @@
+.button {
+  &:extend(.btn);
+  &:extend(.btn-default);
+}
+
+.form-actions a {
+  &:extend(.btn);
+  &:extend(.btn-link);
+}
+
+.form-actions .button {
+  &:extend(.btn-lg);
+}
+
+#editor,
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  &:extend(.form-control);
+  .form-control-focus();
+  .placeholder();
+}
+
+.control-group {
+  &:extend(.form-group);
+}
