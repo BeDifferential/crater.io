@@ -86,6 +86,22 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/lib/bootstrap/mixins/vendor-prefixes.import.less'
   ], ['client']);
 
+  // Ionicons - Fonts
+  api.addFiles([
+    'lib/public/fonts/ionicons.eot',
+    'lib/public/fonts/ionicons.svg',
+    'lib/public/fonts/ionicons.ttf',
+    'lib/public/fonts/ionicons.woff'
+    ], ['client']);
+
+  // Ionicons - CSS
+  api.addFiles([
+    'lib/client/stylesheets/lib/ionicons/_ionicons-font.import.less',
+    'lib/client/stylesheets/lib/ionicons/_ionicons-icons.import.less',
+    'lib/client/stylesheets/lib/ionicons/_ionicons-variables.import.less',
+    'lib/client/stylesheets/lib/ionicons/ionicons.less'
+    ], ['client']);
+
   // Custom CSS - Base
   api.addFiles([
     'lib/client/stylesheets/base/variables.import.less',
@@ -110,11 +126,16 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/stylesheets/layout/content.import.less',
     'lib/client/stylesheets/layout/header.import.less',
-    'lib/client/stylesheets/layout/nav.import.less'
+    'lib/client/stylesheets/layout/tabs.import.less'
   ], ['client']);
 
   // Custom Templates
   api.addFiles([
+    'lib/client/templates/common/layout.html',
+    'lib/client/templates/nav/nav.html',
+    'lib/client/templates/nav/submit_button.html',
+    'lib/client/templates/nav/tabs.html',
+    'lib/client/templates/nav/views_menu.html',
     'lib/client/templates/posts/modules/post_admin.html',
     'lib/client/templates/posts/modules/post_categories.html',
     'lib/client/templates/posts/modules/post_comments_link.html',
@@ -123,11 +144,7 @@ Package.onUse(function (api) {
     'lib/client/templates/posts/modules/post_info.html',
     'lib/client/templates/posts/modules/post_upvote.html',
     'lib/client/templates/posts/post_body.html',
-    'lib/client/templates/posts/posts_load_more.html',
-    'lib/client/templates/nav/header.html',
-    'lib/client/templates/nav/header.js',
-    'lib/client/templates/nav/nav.html',
-    'lib/client/templates/nav/submit_button.html'
+    'lib/client/templates/posts/posts_load_more.html'
   ], ['client']);
 
   // Custom Configuration

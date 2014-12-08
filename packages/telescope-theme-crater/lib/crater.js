@@ -1,13 +1,16 @@
 themeSettings.useDropdowns = false;
 
+primaryNav = ['viewsMenu'];
+secondaryNav = ['notificationsMenu', 'userMenu'];
+
 viewNav = [
   {
     route: 'posts_top',
-    label: 'Top'
+    label: 'Trending'
   },
   {
     route: 'posts_new',
-    label: 'New'
+    label: 'Recent'
   }
 ];
 
@@ -35,11 +38,11 @@ postHeading = [
 
 postMeta = [
   {
-    template: 'postInfo',
+    template: 'postDomain',
     order: 1
   },
   {
-    template: 'postDomain',
+    template: 'postInfo',
     order: 3
   },
   {
@@ -48,20 +51,23 @@ postMeta = [
   }
 ];
 
-templates['nav'] = 'craterNav';
+templates['layout']               = 'craterLayout';
 
-templates['postActions'] = 'craterPostActions';
-templates['postAdmin'] = 'craterPostAdmin';
-templates['postCategories'] = 'craterPostCategories';
-templates['postCommentsLink'] = 'craterPostCommentsLink';
-templates['postDiscuss'] = 'craterPostDiscuss';
-templates['postDomain'] = 'craterPostDomain';
-templates['postInfo'] = 'craterPostInfo';
-templates['postUpvote'] = 'craterPostUpvote';
+templates['nav']                  = 'craterNav';
+templates['viewsMenu']            = 'craterViewsMenu';
 
-templates['post_body'] = 'craterPostBody';
-templates['postsLoadMore'] = 'craterPostsLoadMore';
+templates['postActions']          = 'craterPostActions';
+templates['postAdmin']            = 'craterPostAdmin';
+templates['postCategories']       = 'craterPostCategories';
+templates['postCommentsLink']     = 'craterPostCommentsLink';
+templates['postDiscuss']          = 'craterPostDiscuss';
+templates['postDomain']           = 'craterPostDomain';
+templates['postInfo']             = 'craterPostInfo';
+templates['postUpvote']           = 'craterPostUpvote';
 
-heroModules.unshift({
-  template: 'craterHeader'
-});
+templates['post_body']            = 'craterPostBody';
+templates['postsLoadMore']        = 'craterPostsLoadMore';
+
+// heroModules.unshift({
+//   template: 'craterHeader'
+// });
