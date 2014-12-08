@@ -125,12 +125,14 @@ Package.onUse(function (api) {
   // Custom CSS - Layout
   api.addFiles([
     'lib/client/stylesheets/layout/content.import.less',
+    'lib/client/stylesheets/layout/footer.import.less',
     'lib/client/stylesheets/layout/header.import.less',
     'lib/client/stylesheets/layout/tabs.import.less'
   ], ['client']);
 
   // Custom Templates
   api.addFiles([
+    'lib/client/templates/common/footer.html',
     'lib/client/templates/common/layout.html',
     'lib/client/templates/nav/nav.html',
     'lib/client/templates/nav/submit_button.html',

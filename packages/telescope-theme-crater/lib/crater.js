@@ -52,6 +52,7 @@ postMeta = [
 ];
 
 templates['layout']               = 'craterLayout';
+templates['footer']               = 'craterFooter';
 
 templates['nav']                  = 'craterNav';
 templates['viewsMenu']            = 'craterViewsMenu';
