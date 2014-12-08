@@ -114,6 +114,7 @@ Package.onUse(function (api) {
   api.addFiles([
     'lib/client/stylesheets/components/avatars.import.less',
     'lib/client/stylesheets/components/buttons.import.less',
+    'lib/client/stylesheets/components/comment-item.import.less',
     'lib/client/stylesheets/components/forms.import.less',
     'lib/client/stylesheets/components/newsletter-banner.import.less',
     'lib/client/stylesheets/components/post-detail.import.less',
@@ -132,6 +133,7 @@ Package.onUse(function (api) {
 
   // Custom Templates
   api.addFiles([
+    'lib/client/templates/comments/comment_item.html',
     'lib/client/templates/common/footer.html',
     'lib/client/templates/common/layout.html',
     'lib/client/templates/nav/nav.html',

@@ -57,6 +57,8 @@ templates['footer']               = 'craterFooter';
 templates['nav']                  = 'craterNav';
 templates['viewsMenu']            = 'craterViewsMenu';
 
+templates['comment_item']         = 'craterCommentItem';
+
 templates['postActions']          = 'craterPostActions';
 templates['postAdmin']            = 'craterPostAdmin';
 templates['postCategories']       = 'craterPostCategories';
