@@ -131,6 +131,11 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/layout/tabs.import.less'
   ], ['client']);
 
+  // Images
+  api.addFiles([
+    'lib/public/images/crater.png'
+    ], ['client']);
+
   // Custom Templates
   api.addFiles([
     'lib/client/templates/comments/comment_item.html',
