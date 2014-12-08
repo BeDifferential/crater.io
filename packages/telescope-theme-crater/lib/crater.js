@@ -66,7 +66,9 @@ templates['postInfo']             = 'craterPostInfo';
 templates['postUpvote']           = 'craterPostUpvote';
 
 templates['post_body']            = 'craterPostBody';
+templates['post_edit']            = 'craterPostEdit';
 templates['postsLoadMore']        = 'craterPostsLoadMore';
+templates['post_submit']          = 'craterPostSubmit';
 
 // heroModules.unshift({
 //   template: 'craterHeader'
