@@ -124,24 +124,24 @@ viewParameters.best = function (terms) {
 viewParameters.pending = function (terms) {
   return {
     find: {
-      status: 1,
-      postedAt: {$lte: null}
+      status: 1
     },
-    options: {sort: {createdAt: -1}}
+    options: {sort: {createdAt: -1}},
+    showFuture: true
   };
 }
 
 viewParameters.scheduled = function (terms) {
   return {
-    find: {
-      postedAt: {
-        $gte: terms.after,
-        $lt: terms.before
-      }
-    },
-    options: {
-      sort: {sticky: -1, baseScore: -1, limit: 0}
-    }
+    find: {postedAt: {$gte: new Date()}},
+    options: {sort: {postedAt: -1}}
+  };
+}
+
+viewParameters.userPosts = function (terms) {
+  return {
+    find: {userId: terms.userId},
+    options: {limit: 5, sort: {postedAt: -1}}
   };
 }
 
@@ -178,8 +178,8 @@ postModules = [
     order: 5
   },
   {
-    template: 'postContent',
-    position: 'center-center'
+    template: 'postAvatars',
+    order: 30
   },
   {
     template: 'postDiscuss',
@@ -196,30 +196,30 @@ postThumbnail = [];
 postHeading = [
   {
     template: 'postTitle',
-    order: 1
+    order: 10
   },
   {
     template: 'postDomain',
-    order: 2
+    order: 20
   }
 ];
 
 postMeta = [
   {
     template: 'postAuthor',
-    order: 1
+    order: 10
   },
   {
     template: 'postInfo',
-    order: 2
+    order: 20
   },
   {
     template: 'postCommentsLink',
-    order: 3
+    order: 30
   },
   {
     template: 'postAdmin',
-    order: 4
+    order: 50
   }
 ]
 // ------------------------------ Callbacks ------------------------------ //

@@ -119,6 +119,7 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/components/newsletter-banner.import.less',
     'lib/client/stylesheets/components/post-detail.import.less',
     'lib/client/stylesheets/components/post-item.import.less',
+    'lib/client/stylesheets/components/post-list.import.less',
     'lib/client/stylesheets/components/telescope.import.less',
     'lib/client/stylesheets/components/update-banner.import.less'
   ], ['client']);

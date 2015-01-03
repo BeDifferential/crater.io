@@ -59,13 +59,11 @@ telescope-i18n
 # Telescope Packages (Optional)
 
 telescope-datetimepicker
-telescope-module-share
 telescope-api
 telescope-rss
 telescope-search
 telescope-tags
 telescope-email
-telescope-embedly
 telescope-newsletter
 telescope-daily
 telescope-update-prompt

@@ -1,20 +1,36 @@
 .comment {
   .clearfix();
 
-  margin: 12px 0;
-
   .avatar {
     .square(30px);
   }
 }
 
+.comments.comment-list > .comment {
+  margin-top: 12px;
+}
+
+.comment-content {
+  .clearfix();
+}
+
+.comment-text > p:last-child {
+  margin-bottom: 0;
+}
+
 .comment-actions {
   float: left;
-  width: 50px;
-  margin-right: 16px;
+  width: 40px;
+  margin-right: 10px;
+
+  &.upvoted .btn.upvote, &.downvoted .btn.downvote {
+    background: @brand-primary;
+    color: #fff;
+  }
 
   .btn.downvote {
     margin-top: -1px;
+    border-top: 0;
   }
 }
 
@@ -48,7 +64,7 @@
 }
 
 a.comment-username {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: @text-color;
 
@@ -56,4 +72,24 @@ a.comment-username {
     text-decoration: none;
     border-bottom: 0;
   }
+}
+
+.comment-list {
+  margin-top: 32px;
+
+  .well {
+    .box-shadow(none);
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+.comment-children {
+  clear: both;
+  margin-left: 50px;
+  margin-top: 8px;
+}
+
+.well .comment-children {
+  // margin-left: 33px;
 }
