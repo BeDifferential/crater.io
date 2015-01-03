@@ -6,7 +6,10 @@ Package.onUse(function (api) {
     'telescope-lib', 
     'telescope-base', 
     'aldeed:simple-schema',
-    'tap:i18n'
+    'aldeed:autoform',
+    'tap:i18n',
+    'fourseven:scss',
+    'matb33:collection-hooks'
   ], ['client', 'server']);
 
   api.use([
@@ -23,6 +26,7 @@ Package.onUse(function (api) {
 
   api.add_files([
     'lib/client/routes.js',
+    'lib/client/scss/categories.scss',
     'lib/client/views/categories.html',
     'lib/client/views/categories.js',
     'lib/client/views/category_item.html',
@@ -44,5 +48,12 @@ Package.onUse(function (api) {
     "i18n/zh-CN.i18n.json",
   ], ["client", "server"]);
  
-  api.export(['preloadSubscriptions', 'adminNav', 'Categories', 'addToPostSchema', 'primaryNav', 'postModules']);
+  api.export([
+    'preloadSubscriptions', 
+    'adminNav', 
+    'Categories', 
+    'addToPostSchema', 
+    'primaryNav', 
+    'postModules'
+  ]);
 });

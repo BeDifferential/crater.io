@@ -1,3 +1,52 @@
+## v0.11.1 “FeedScope”
+
+* Post submit and edit forms now submit to their respective methods directly.
+* Removed `postSubmitRenderedCallbacks` and `postEditRenderedCallbacks`.
+* `telescope-post-by-feed` package now lets you import posts from RSS feeds.
+* Adding limit of 200 posts to post list request.
+* Refactoring post and comment submit to fix latency compensation issues.
+* Tags package now using Autoform. 
+
+## v0.11.0 “AvatarScope”
+
+* Added new `userCreatedCallbacks` callback hook.
+* Added new setting to subscribe new user to mailing list automatically.
+* Added new `debug` setting. 
+* `siteUrl` setting now affects `Meteor.absoluteUrl()`.
+* Added new `clog` function that only logs if `debug` setting is true.
+* Simplified post module system, modules are not split in three zones anymore.
+* Added new `postThumbnail` hook to show Embedly thumbnail. 
+* Simplified Hubble theme CSS for both desktop and mobile.
+* Many CSS tweaks for Hubble mobile. 
+* Show author and commenters avatars on post item.
+* Adding description to post list pages and showing them in menus. 
+* Improved Russian translation (thanks @Viktorminator!).
+* Now using `editorconfig` (thanks @erasaur!).
+* Upgraded to `useraccounts:unstyled@1.4.0` (thanks @splendido!).
+
+## v0.10.0 “RefactorScope”
+
+* Renaming Errors to Messages (thanks @yourcelf!).
+* Adding `fast-render` (thanks @arunoda!).
+* Extracted digest into its own package.
+* Adding "scheduled" view that shows upcoming scheduled posts.
+* Bringing back "delete post" link that was removed by mistake.
+* Made user profile display page modular.
+* Made user profile edit page modular.
+* Started extracting invites into their own package.
+
+## v0.9.11 “FormScope”
+
+* Now using [Autoform](https://github.com/aldeed/meteor-autoform/)'s **quickform** feature to generate post submit and edit forms. 
+* Various fixes by [@anthonymayer](https://github.com/anthonymayer).
+* Now using [fourseven:scss](https://github.com/fourseven/meteor-scss) to directly compile SCSS files. 
+* Renamed `post` method to `submitPost`. 
+* Post editing now happens via a `postEdit` method.
+* Categories are now normalized (only the `_id` is stored on the post object, not the whole category object).
+* Refactored Embedly package; now fills in description as well (thanks [@kvindasAB](https://github.com/kvindasAB)!).
+* Thumbnail height and width are now customizable in settings panel.
+* Settings and Post forms now i18n'ized.
+
 ## v0.9.10 “i18nScope”
 
 * Now using [tap:i18n](https://github.com/TAPevents/tap-i18n) for internationalization (thanks a ton to @theosp).

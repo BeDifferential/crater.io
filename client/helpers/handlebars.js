@@ -42,7 +42,7 @@ UI.registerHelper('isAdmin', function(showError) {
     return true;
   }else{
     if((typeof showError === "string") && (showError === "true"))
-      throwError(i18n.t('sorry_you_do_not_have_access_to_this_page'));
+      flashMessage(i18n.t('sorry_you_do_not_have_access_to_this_page'), "error");
     return false;
   }
 });
@@ -78,4 +78,16 @@ UI.registerHelper("sanitize", function(content) {
 UI.registerHelper('pluralize', function(count, string) {
   string = count === 1 ? string : string + 's';
   return i18n.t(string);
+});
+
+UI.registerHelper("profileUrl", function(userOrUserId) {
+  var user = (typeof userOrUserId === "string") ? Meteor.users.findOne(userOrUserId) :  userOrUserId;
+  if (!!user)
+    return getProfileUrl(user);
+});
+
+UI.registerHelper("userName", function(userOrUserId) {
+  var user = (typeof userOrUserId === "string") ? Meteor.users.findOne(userOrUserId) :  userOrUserId;
+  if (!!user)
+    return getUserName(user);
 });

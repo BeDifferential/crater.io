@@ -24,12 +24,23 @@ settingsSchemaObject = {
       group: 'general'
     }
   },
+  description: {
+    type: String,
+    label: "Description",
+    optional: true,
+    autoform: {
+      group: 'general',
+      rows: 5,
+      instructions: 'A short description used for SEO purposes.'
+    }
+  },
   requireViewInvite: {
     type: Boolean,
     label: "Require invite to view",
     optional: true,
     autoform: {
-      group: 'invites'
+      group: 'invites',
+      leftLabel: 'Require View Invite'
     }
   },
   requirePostInvite: {
@@ -37,7 +48,8 @@ settingsSchemaObject = {
     label: "Require invite to post",
     optional: true,
     autoform: {
-      group: 'invites'
+      group: 'invites',
+      leftLabel: 'Require Post Invite'
     }
   },
   requirePostsApproval: {
@@ -45,7 +57,8 @@ settingsSchemaObject = {
     optional: true,
     autoform: {
       group: 'general',
-      instructions: "Posts must be approved by admin"
+      instructions: "Posts must be approved by admin",
+      leftLabel: "Require Posts Approval"
     }
   },
   // nestedComments: {
@@ -69,7 +82,8 @@ settingsSchemaObject = {
     optional: true,
     autoform: {
       group: 'email',
-      instructions: 'The address all outgoing emails will be sent from.'
+      instructions: 'The address all outgoing emails will be sent from.',
+      private: true
     }
   },
   scoreUpdateInterval: {
@@ -78,7 +92,8 @@ settingsSchemaObject = {
     defaultValue: 30,
     autoform: {
       group: 'scoring',
-      instructions: 'How often to recalculate scores, in seconds (default to 30)'
+      instructions: 'How often to recalculate scores, in seconds (default to 30)',
+      private: true
     }
   },
   defaultView: {
@@ -195,28 +210,32 @@ settingsSchemaObject = {
     type: String,
     optional: true,
     autoform: {
-      group: 'colors'
+      group: 'colors',
+      // type: 'color'
     }
   },
   buttonTextColor: {
     type: String,
     optional: true,
     autoform: {
-      group: 'colors'
+      group: 'colors',
+      // type: 'color'
     }
   },
   headerColor: {
     type: String,
     optional: true,
     autoform: {
-      group: 'colors'
+      group: 'colors',
+      // type: 'color'
     }
   },
   headerTextColor: {
     type: String,
     optional: true,
     autoform: {
-      group: 'colors'
+      group: 'colors',
+      // type: 'color'
     }
   },
   twitterAccount: {
@@ -271,7 +290,8 @@ settingsSchemaObject = {
     autoform: {
       group: 'email',
       instructions: 'Content that will appear at the bottom of outgoing emails (accepts HTML).',
-      rows: 5
+      rows: 5,
+      private: true
     }
   },
   notes: {
@@ -280,9 +300,19 @@ settingsSchemaObject = {
     autoform: {
       group: 'extras',
       instructions: 'You can store any notes or extra information here.',
-      rows: 5
+      rows: 5,
+      private: true
     }
   },
+  debug: {
+    type: Boolean,
+    optional: true,
+    label: 'Debug Mode',
+    autoform: {
+      group: 'debug',
+      instructions: 'Enable debug mode for more details console logs'
+    }
+  }
 };
 
 // add any extra properties to settingsSchemaObject (provided by packages for example)
@@ -318,3 +348,9 @@ if (Meteor.isClient){
     }
   });
 }
+
+Meteor.startup(function () {
+  // override Meteor.absoluteUrl() with URL provided in settings
+  Meteor.absoluteUrl.defaultOptions.rootUrl = getSetting('siteUrl', Meteor.absoluteUrl());
+  debug = getSetting('debug', false);
+});

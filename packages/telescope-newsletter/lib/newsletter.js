@@ -34,7 +34,10 @@ addToPostSchema.push(
     propertyName: 'scheduledAt',
     propertySchema: {
       type: Date,
-      optional: true
+      optional: true,
+      autoform: {
+        omit: true
+      }
     }
   }
 );
@@ -63,7 +66,8 @@ var mailChimpAPIKey = {
     type: String,
     optional: true,
     autoform: {
-      group: 'newsletter'
+      group: 'newsletter',
+      private: true
     }
   }
 }
@@ -76,7 +80,8 @@ var mailChimpListId = {
     optional: true,
     autoform: {
       group: 'newsletter',
-      instructions: 'The ID of the list you want to send to.'
+      instructions: 'The ID of the list you want to send to.',
+      private: true
     }
   }
 }
@@ -129,6 +134,19 @@ var newsletterFrequency = {
 }
 addToSettingsSchema.push(newsletterFrequency);
 
+var autoSubscribe = {
+  propertyName: 'autoSubscribe',
+  propertySchema: {
+    type: Boolean,
+    optional: true,
+    autoform: {
+      group: 'newsletter',
+      instructions: 'Automatically subscribe new users on sign-up.'
+    }
+  }
+}
+addToSettingsSchema.push(autoSubscribe);
+
 // create new "campaign" lens for all posts from the past X days that haven't been scheduled yet
 viewParameters.campaign = function (terms) {
   return {
@@ -145,3 +163,14 @@ viewParameters.campaign = function (terms) {
 heroModules.push({
   template: 'newsletterBanner'
 });
+
+ function subscribeUserOnCreation (user) {
+  if (!!getSetting('autoSubscribe') && !!getEmail(user)) {
+    addToMailChimpList(user, false, function (error, result) {
+      console.log(error)
+      console.log(result)
+    });
+  }
+  return user;
+}
+userCreatedCallbacks.push(subscribeUserOnCreation);
