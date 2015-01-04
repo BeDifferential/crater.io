@@ -148,6 +148,7 @@ Package.onUse(function (api) {
     'lib/client/templates/common/footer.html',
     'lib/client/templates/common/layout.html',
     'lib/client/templates/nav/nav.html',
+    'lib/client/templates/nav/nav.js',
     'lib/client/templates/nav/notifications_menu.html',
     'lib/client/templates/nav/search.html',
     'lib/client/templates/nav/submit_button.html',
