@@ -1,14 +1,32 @@
-.comment {
+.comment-list {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid @brand-primary;
+}
+
+.comment-content {
   .clearfix();
+  padding: 12px 0;
 
   .avatar {
     .square(30px);
   }
 }
 
-.comments.comment-list > .comment {
-  margin-top: 12px;
+.well.comment-children {
+  clear: both;
+  margin: 0;
+  padding: 0 0 0 12px;
+  border: 0;
+  margin-left: 33px;
+  .box-shadow(none);
 }
+
+.comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children > .comment > .comment-body > .comment-children {
+  margin-left: 0;
+  padding-left: 0;
+}
+
 
 .comment-content {
   .clearfix();
@@ -20,7 +38,7 @@
 
 .comment-actions {
   float: left;
-  width: 40px;
+  width: 33px;
   margin-right: 10px;
 
   &.upvoted .btn.upvote, &.downvoted .btn.downvote {
@@ -31,6 +49,14 @@
   .btn.downvote {
     margin-top: -1px;
     border-top: 0;
+  }
+
+  .btn {
+    padding: 4px 10px;
+
+    .icon {
+      font-size: 16px;
+    }
   }
 }
 
@@ -72,24 +98,4 @@ a.comment-username {
     text-decoration: none;
     border-bottom: 0;
   }
-}
-
-.comment-list {
-  margin-top: 32px;
-
-  .well {
-    .box-shadow(none);
-    margin: 0;
-    padding-bottom: 0;
-  }
-}
-
-.comment-children {
-  clear: both;
-  margin-left: 50px;
-  margin-top: 8px;
-}
-
-.well .comment-children {
-  // margin-left: 33px;
 }

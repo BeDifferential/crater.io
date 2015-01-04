@@ -32,13 +32,15 @@
       {{/if}}
 
       {{#if showChildComments}}
-        <ul class="comment-children comment-list">
-          {{#each child_comments}}
-            {{#with this}}
-              <div class="well well-sm">{{> UI.dynamic template=comment_item}}</div>
-            {{/with}}
-          {{/each}}
-        </ul>
+        {{#if child_comments.count}}
+          <ul class="well well-sm comment-children comment-list">
+            {{#each child_comments}}
+              {{#with this}}
+                {{> UI.dynamic template=comment_item}}
+              {{/with}}
+            {{/each}}
+          </ul>
+        {{/if}}
       {{/if}}
     </div>
   </li>
