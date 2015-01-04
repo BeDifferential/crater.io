@@ -92,7 +92,7 @@ Package.onUse(function (api) {
     'lib/public/fonts/ionicons.svg',
     'lib/public/fonts/ionicons.ttf',
     'lib/public/fonts/ionicons.woff'
-    ], ['client']);
+  ], ['client']);
 
   // Ionicons - CSS
   api.addFiles([
@@ -100,7 +100,7 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/lib/ionicons/_ionicons-icons.import.less',
     'lib/client/stylesheets/lib/ionicons/_ionicons-variables.import.less',
     'lib/client/stylesheets/lib/ionicons/ionicons.less'
-    ], ['client']);
+  ], ['client']);
 
   // Custom CSS - Base
   api.addFiles([
@@ -135,7 +135,12 @@ Package.onUse(function (api) {
   // Images
   api.addFiles([
     'lib/public/images/crater.png'
-    ], ['client']);
+  ], ['client']);
+
+  // JavaScript
+  api.addFiles([
+    'lib/client/compatibility/bootstrap.js'
+  ], ['client']);
 
   // Custom Templates
   api.addFiles([
@@ -143,11 +148,14 @@ Package.onUse(function (api) {
     'lib/client/templates/common/footer.html',
     'lib/client/templates/common/layout.html',
     'lib/client/templates/nav/nav.html',
+    'lib/client/templates/nav/notifications_menu.html',
+    'lib/client/templates/nav/search.html',
     'lib/client/templates/nav/submit_button.html',
     'lib/client/templates/nav/tabs.html',
     'lib/client/templates/nav/tabs.js',
     'lib/client/templates/posts/modules/post_admin.html',
     'lib/client/templates/posts/modules/post_avatars.html',
+    'lib/client/templates/posts/modules/post_avatars.js',
     'lib/client/templates/posts/modules/post_categories.html',
     'lib/client/templates/posts/modules/post_discuss.html',
     'lib/client/templates/posts/modules/post_domain.html',

@@ -3,7 +3,7 @@ Template.craterTabs.helpers({
     if (Meteor.user()) {
       return Router.routes['user_profile'].path({_idOrSlug: Meteor.user().slug});
     } else {
-      return Router.routes['signIn'].path();
+      return Router.routes['atSignIn'].path();
     }
   }
 });
