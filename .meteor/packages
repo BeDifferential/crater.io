@@ -47,7 +47,6 @@ rajit:bootstrap3-datepicker
 bengott:avatar
 jparker:gravatar
 tap:i18n
-useraccounts:unstyled@1.4.0
 tsega:bootstrap3-datetimepicker@3.1.3_1
 
 # Telescope Packages (Required)
@@ -80,4 +79,5 @@ velocity:html-reporter
 
 # Custom Packages
 less
+useraccounts:bootstrap@1.4.1
 telescope-theme-crater

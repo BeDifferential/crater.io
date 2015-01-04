@@ -2,7 +2,7 @@ Package.describe({summary: "Crater.io Theme"});
 
 Package.onUse(function (api) {
 
-  api.use(['telescope-lib', 'telescope-base'], ['client', 'server']);
+  api.use(['telescope-lib', 'telescope-base', 'useraccounts:bootstrap'], ['client', 'server']);
 
   api.use(['templating', 'less'], 'client');
 

@@ -1,3 +1,12 @@
+AccountsTemplates.configure({
+  texts: {
+    socialIcons: {
+      facebook: "icon ion-social-facebook",
+      twitter: "icon ion-social-twitter"
+    }
+  }
+});
+
 themeSettings.useDropdowns = false;
 
 primaryNav = ['viewsMenu'];
@@ -13,43 +22,6 @@ viewNav = [
     label: 'Recent'
   }
 ];
-
-// postModules = [
-// {
-//   template: 'postUpvote',
-//   position: 'left-left'
-// },
-// {
-//   template: 'postContent',
-//   position: 'center-center'
-// },
-// {
-//   template: 'postDiscuss',
-//   position: 'right-right'
-// }
-// ];
-//
-// postHeading = [
-//   {
-//     template: 'postTitle',
-//     order: 1
-//   }
-// ];
-//
-// postMeta = [
-//   {
-//     template: 'postDomain',
-//     order: 1
-//   },
-//   {
-//     template: 'postInfo',
-//     order: 3
-//   },
-//   {
-//     template: 'postAdmin',
-//     order: 5
-//   }
-// ];
 
 postModules = [
   {
