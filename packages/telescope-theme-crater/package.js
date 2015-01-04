@@ -116,12 +116,15 @@ Package.onUse(function (api) {
     'lib/client/stylesheets/components/buttons.import.less',
     'lib/client/stylesheets/components/comment-item.import.less',
     'lib/client/stylesheets/components/forms.import.less',
+    'lib/client/stylesheets/components/jumbotron.import.less',
+    'lib/client/stylesheets/components/navs.import.less',
     'lib/client/stylesheets/components/newsletter-banner.import.less',
     'lib/client/stylesheets/components/post-detail.import.less',
     'lib/client/stylesheets/components/post-item.import.less',
     'lib/client/stylesheets/components/post-list.import.less',
     'lib/client/stylesheets/components/telescope.import.less',
-    'lib/client/stylesheets/components/update-banner.import.less'
+    'lib/client/stylesheets/components/update-banner.import.less',
+    'lib/client/stylesheets/components/user-profile.import.less'
   ], ['client']);
 
   // Custom CSS - Layout
@@ -164,7 +167,14 @@ Package.onUse(function (api) {
     'lib/client/templates/posts/modules/post_upvote.html',
     'lib/client/templates/posts/post_body.html',
     'lib/client/templates/posts/post_edit.html',
-    'lib/client/templates/posts/posts_load_more.html'
+    'lib/client/templates/posts/posts_load_more.html',
+    'lib/client/templates/users/user_profile.html',
+    'lib/client/templates/users/user_profile.js',
+    'lib/client/templates/users/profile/user_comments.html',
+    'lib/client/templates/users/profile/user_downvoted_posts.html',
+    'lib/client/templates/users/profile/user_info.html',
+    'lib/client/templates/users/profile/user_posts.html',
+    'lib/client/templates/users/profile/user_upvoted_posts.html'
   ], ['client']);
 
   // Custom Configuration

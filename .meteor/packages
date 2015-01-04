@@ -72,11 +72,6 @@ telescope-singleday
 telescope-invites
 telescope-post-by-feed
 
-# Testing
-
-sanjo:jasmine
-velocity:html-reporter
-
 # Custom Packages
 less
 useraccounts:bootstrap@1.4.1

@@ -64,7 +64,30 @@ postMeta = [
     template: 'postAdmin',
     order: 30
   }
-]
+];
+
+userProfileDisplay = [
+  {
+    template: 'craterUserInfo',
+    order: 1
+  },
+  {
+    template: 'craterUserPosts',
+    order: 2
+  },
+  {
+    template: 'craterUserUpvotedPosts',
+    order: 3
+  },
+  {
+    template: 'craterUserDownvotedPosts',
+    order: 4
+  },
+  {
+    template: 'craterUserComments',
+    order: 5
+  }
+];
 
 templates['layout']               = 'craterLayout';
 templates['footer']               = 'craterFooter';
@@ -82,3 +105,9 @@ templates['postUpvote']           = 'craterPostUpvote';
 templates['post_body']            = 'craterPostBody';
 templates['post_edit']            = 'craterPostEdit';
 templates['postsLoadMore']        = 'craterPostsLoadMore';
+templates['user_profile']         = 'craterUserProfile';
+templates['userComments']         = 'craterUserComments';
+templates['userDownvotedPosts']   = 'craterUserDownvotedPosts';
+templates['userInfo']             = 'craterUserInfo';
+templates['userPosts']            = 'craterUserPosts';
+templates['userUpPosts']          = 'craterUserUpPosts';
