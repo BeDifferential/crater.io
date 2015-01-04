@@ -33,11 +33,11 @@ postModules = [
     order: 5
   },
   {
-    template: 'postAvatars',
+    template: 'postDiscuss',
     order: 30
   },
   {
-    template: 'postDiscuss',
+    template: 'postAvatars',
     order: 40
   }
 ];
@@ -61,12 +61,8 @@ postMeta = [
     order: 20
   },
   {
-    template: 'postCommentsLink',
-    order: 30
-  },
-  {
     template: 'postAdmin',
-    order: 50
+    order: 30
   }
 ]
 
@@ -78,11 +74,9 @@ templates['viewsMenu']            = 'craterViewsMenu';
 
 templates['comment_item']         = 'craterCommentItem';
 
-templates['postActions']          = 'craterPostActions';
 templates['postAdmin']            = 'craterPostAdmin';
 templates['postAvatars']          = 'craterPostAvatars';
 templates['postCategories']       = 'craterPostCategories';
-templates['postCommentsLink']     = 'craterPostCommentsLink';
 templates['postDiscuss']          = 'craterPostDiscuss';
 templates['postDomain']           = 'craterPostDomain';
 templates['postInfo']             = 'craterPostInfo';
@@ -92,7 +86,3 @@ templates['post_body']            = 'craterPostBody';
 templates['post_edit']            = 'craterPostEdit';
 templates['postsLoadMore']        = 'craterPostsLoadMore';
 templates['post_submit']          = 'craterPostSubmit';
-
-// heroModules.unshift({
-//   template: 'craterHeader'
-// });

@@ -2,7 +2,7 @@
   <li class="comment module comment-displayed" id="{{_id}}">
     <div class="comment-body">
       {{#if isDeleted}}
-        <well class="comment-deleted">This comment has been deleted.</well>
+        <div class="well comment-deleted">This comment has been deleted.</div>
       {{else}}
         <div class="comment-content">
           <div class="comment-actions {{#if upvoted}}upvoted{{else}}not-upvoted{{/if}} {{#if downvoted}}downvoted{{else}}not-downvoted{{/if}}">

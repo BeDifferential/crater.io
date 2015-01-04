@@ -1,6 +1,7 @@
 .post {
   .clearfix();
   margin-bottom: 24px;
+  position: relative;
 
   .post-module {
     vertical-align: middle;
@@ -14,8 +15,17 @@
     width: 70%;
     float: left;
   }
+  .post-avatars {
+    position: absolute;
+    right: 70px;
+    top: 10px;
+  }
   .post-discuss {
-    float: right;
+    position: absolute;
+    right: 0;
+  }
+  .post-actions {
+    display: none;
   }
 }
 
