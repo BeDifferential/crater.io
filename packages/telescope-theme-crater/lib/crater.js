@@ -68,12 +68,8 @@ postMeta = [
 
 templates['layout']               = 'craterLayout';
 templates['footer']               = 'craterFooter';
-
 templates['nav']                  = 'craterNav';
-templates['viewsMenu']            = 'craterViewsMenu';
-
 templates['comment_item']         = 'craterCommentItem';
-
 templates['postAdmin']            = 'craterPostAdmin';
 templates['postAvatars']          = 'craterPostAvatars';
 templates['postCategories']       = 'craterPostCategories';
@@ -81,8 +77,6 @@ templates['postDiscuss']          = 'craterPostDiscuss';
 templates['postDomain']           = 'craterPostDomain';
 templates['postInfo']             = 'craterPostInfo';
 templates['postUpvote']           = 'craterPostUpvote';
-
 templates['post_body']            = 'craterPostBody';
 templates['post_edit']            = 'craterPostEdit';
 templates['postsLoadMore']        = 'craterPostsLoadMore';
-templates['post_submit']          = 'craterPostSubmit';

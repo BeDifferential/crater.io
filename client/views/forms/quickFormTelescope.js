@@ -19,7 +19,7 @@ var getSchema = function () {
 }
 
 var canEditField = function (field) {
-  // show field only if user is admin or it's marked as editable 
+  // show field only if user is admin or it's marked as editable
   return isAdmin(Meteor.user()) || !!field.atts.editable || (!!field.afFieldInputAtts && !!field.afFieldInputAtts.editable)
 }
 
@@ -36,14 +36,14 @@ Template[getTemplate('quickForm_telescope')].helpers({
       return true // return remaining fields
     }), 'name');
     return fields;
-  },  
+  },
   afFieldsets: function () {
     var groups = _.compact(_.uniq(_.pluckDeep(getSchema(), 'autoform.group')));
-    
+
     // if user is not admin, exclude "admin" group from fieldsets
     if (!isAdmin(Meteor.user()))
       groups = _.without(groups, 'admin')
-    
+
     return groups;
   },
   fieldsetName: function () {
@@ -83,11 +83,11 @@ Template[getTemplate('quickForm_telescope')].helpers({
   },
   qfAutoFormContext: function () {
     var ctx = _.clone(this.qfAutoFormContext || {});
-    if (typeof ctx["class"] === "string") {
-      ctx["class"] += " form-horizontal";
-    } else {
-      ctx["class"] = "form-horizontal";
-    }
+    // if (typeof ctx["class"] === "string") {
+    //   ctx["class"] += " form-horizontal";
+    // } else {
+    //   ctx["class"] = "form-horizontal";
+    // }
     if (ctx["input-col-class"])
       delete ctx["input-col-class"];
     if (ctx["label-class"])

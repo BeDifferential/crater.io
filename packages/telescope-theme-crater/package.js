@@ -145,7 +145,7 @@ Package.onUse(function (api) {
     'lib/client/templates/nav/nav.html',
     'lib/client/templates/nav/submit_button.html',
     'lib/client/templates/nav/tabs.html',
-    'lib/client/templates/nav/views_menu.html',
+    'lib/client/templates/nav/tabs.js',
     'lib/client/templates/posts/modules/post_admin.html',
     'lib/client/templates/posts/modules/post_avatars.html',
     'lib/client/templates/posts/modules/post_categories.html',
@@ -155,8 +155,7 @@ Package.onUse(function (api) {
     'lib/client/templates/posts/modules/post_upvote.html',
     'lib/client/templates/posts/post_body.html',
     'lib/client/templates/posts/post_edit.html',
-    'lib/client/templates/posts/posts_load_more.html',
-    'lib/client/templates/posts/post_submit.html'
+    'lib/client/templates/posts/posts_load_more.html'
   ], ['client']);
 
   // Custom Configuration

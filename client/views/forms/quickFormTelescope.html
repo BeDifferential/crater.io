@@ -6,14 +6,14 @@
         {{> afQuickField name=this template="telescope" input-col-class=inputClass label-class=labelClass}}
       {{/each}}
     </div>
-    
+
     {{#each afFieldsets}}
       <fieldset>
         <h3 class="fieldset-heading">{{fieldsetName}}</h3>
         {{> afQuickFields fields=fieldsForFieldset template="telescope" input-col-class=inputClass label-class=labelClass}}
       </fieldset>
     {{/each}}
-    
+
     {{#if qfShouldRenderButton}}
       <div class="form-group">
         <div class="{{labelClass}}"></div>
