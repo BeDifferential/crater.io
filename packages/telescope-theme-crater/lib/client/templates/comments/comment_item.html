@@ -20,7 +20,7 @@
               <span class="comment-meta-item comment-time">{{timeAgo ago}}</span>
               <span class="comment-meta-item points">{{upvotes}} points</span>
               {{#if getSetting "nestedComments" true}}
-                <a href="/comments/{{_id}}" class="comment-meta-item comment-reply goto-comment">{{_ "reply"}}</a>
+                <a href="/comments/{{_id}}" class="comment-meta-item comment-reply goto-comment"><i class="icon ion-reply"></i> {{_ "reply"}}</a>
               {{/if}}
               {{#if can_edit}}
                <a class="comment-meta-item edit-link" href="/comments/{{_id}}/edit"><i class="icon ion-ios-compose-outline"></i> {{_ "edit"}}</a>

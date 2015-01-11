@@ -167,6 +167,8 @@ Package.onUse(function (api) {
     'lib/client/templates/posts/modules/post_upvote.html',
     'lib/client/templates/posts/post_body.html',
     'lib/client/templates/posts/post_edit.html',
+    'lib/client/templates/posts/post_item.html',
+    'lib/client/templates/posts/post_item.js',
     'lib/client/templates/posts/posts_load_more.html',
     'lib/client/templates/users/user_profile.html',
     'lib/client/templates/users/user_profile.js',

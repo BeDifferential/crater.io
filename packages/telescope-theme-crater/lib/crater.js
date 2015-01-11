@@ -104,6 +104,7 @@ templates['postInfo']             = 'craterPostInfo';
 templates['postUpvote']           = 'craterPostUpvote';
 templates['post_body']            = 'craterPostBody';
 templates['post_edit']            = 'craterPostEdit';
+templates['post_item']            = 'craterPostItem';
 templates['postsLoadMore']        = 'craterPostsLoadMore';
 templates['user_profile']         = 'craterUserProfile';
 templates['userComments']         = 'craterUserComments';

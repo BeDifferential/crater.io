@@ -1,7 +1,12 @@
 .post {
   .clearfix();
-  margin-bottom: 24px;
   position: relative;
+  padding: 12px;
+
+  &:hover {
+    cursor: pointer;
+    background: lighten(@brand-primary, 30%);
+  }
 
   .post-module {
     vertical-align: middle;
@@ -17,12 +22,12 @@
   }
   .post-avatars {
     position: absolute;
-    right: 70px;
-    top: 10px;
+    right: 82px;
+    top: 22px;
   }
   .post-discuss {
     position: absolute;
-    right: 0;
+    right: 12px;
   }
   .post-actions {
     display: none;
