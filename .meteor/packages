@@ -16,6 +16,7 @@ accounts-facebook
 service-configuration
 accounts-ui
 reactive-var
+http
 
 # Atmosphere Packages
 
@@ -31,8 +32,6 @@ aldeed:simple-schema
 
 mrt:jquery-hotkeys
 mrt:cookies
-mrt:moment
-mrt:mailchimp
 
 ccan:cssreset # CSS reset (Must come before any other css)
 cmather:handlebars-server
@@ -48,6 +47,12 @@ bengott:avatar
 jparker:gravatar
 tap:i18n
 tsega:bootstrap3-datetimepicker@3.1.3_1
+momentjs:moment
+
+# Testing
+
+# sanjo:jasmine
+# velocity:html-reporter
 
 # Telescope Packages (Required)
 
@@ -71,8 +76,12 @@ telescope-notifications
 telescope-singleday
 telescope-invites
 telescope-post-by-feed
+telescope-releases
+telescope-getting-started
+telescope-subscribe-to-posts
+telescope-tagline-banner
 
 # Custom Packages
 less
-useraccounts:bootstrap@1.4.1
+useraccounts:bootstrap
 telescope-theme-crater

@@ -9,7 +9,8 @@ Package.onUse(function (api) {
     'meteorhacks:fast-render', 
     'meteorhacks:subs-manager',
     'tap:i18n',
-    'telescope-singleday'
+    'telescope-singleday',
+    'fourseven:scss'
   ], ['client', 'server']);
 
   api.use([
@@ -26,8 +27,10 @@ Package.onUse(function (api) {
 
   api.add_files([
     'lib/client/templates/posts_daily.html',
+    'lib/client/templates/after_day.html',
+    'lib/client/templates/before_day.html',
     'lib/client/templates/posts_daily.js',
-    'lib/client/stylesheets/daily.css',
+    'lib/client/stylesheets/daily.scss',
     ], ['client']);
 
   api.add_files([

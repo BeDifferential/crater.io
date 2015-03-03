@@ -35,12 +35,34 @@ STATUS_REJECTED=3;
 
 
 // array containing nav items; initialize with views menu and admin menu
-primaryNav = ['viewsMenu', 'adminMenu'];
+primaryNav = [
+  {
+    template: 'viewsMenu',
+    order: 10
+  },
+  {
+    template: 'adminMenu',
+    order: 20
+  }
+];
 
-secondaryNav = ['userMenu', 'notificationsMenu', 'submitButton'];
+secondaryNav = [
+  {
+    template: 'userMenu',
+    order: 10
+  },
+  {
+    template:'notificationsMenu',
+    order: 20
+  },
+  {
+    template: 'submitButton',
+    order: 30
+  }
+];
 
 // array containing items in the admin menu
-adminNav = [
+adminMenu = [
   {
     route: 'posts_pending',
     label: 'Pending',
@@ -60,16 +82,11 @@ adminNav = [
     route: 'settings',
     label: 'Settings',
     description: 'telescope_settings_panel'
-  },
-  {
-    route: 'toolbox',
-    label: 'Toolbox',
-    description: 'various_utilities'
   }
 ];
 
 // array containing items in the views menu
-viewNav = [
+viewsMenu = [
   {
     route: 'posts_top',
     label: 'top',
@@ -168,14 +185,16 @@ heroModules = [];
 
 footerModules = [];
 
+threadModules = [];
+
 postModules = [
   {
     template: 'postUpvote',
-    order: 1
+    order: 10
   },
   {
     template: 'postContent',
-    order: 5
+    order: 20
   },
   {
     template: 'postAvatars',
@@ -224,6 +243,8 @@ postMeta = [
 ]
 // ------------------------------ Callbacks ------------------------------ //
 
+postClassCallbacks = [];
+
 postSubmitClientCallbacks = [];
 postSubmitMethodCallbacks = [];
 postAfterSubmitMethodCallbacks = []; // runs on server only in a timeout
@@ -231,6 +252,10 @@ postAfterSubmitMethodCallbacks = []; // runs on server only in a timeout
 postEditClientCallbacks = []; // loops over post object
 postEditMethodCallbacks = []; // loops over modifier (i.e. "{$set: {foo: bar}}") object
 postAfterEditMethodCallbacks = []; // loops over modifier object
+
+postApproveCallbacks = [];
+
+commentClassCallbacks = [];
 
 commentSubmitRenderedCallbacks = [];
 commentSubmitClientCallbacks = [];
@@ -246,6 +271,9 @@ userEditRenderedCallbacks = [];
 userEditClientCallbacks = [];
 userCreatedCallbacks = [];
 userProfileCompleteChecks = [];
+
+upvoteCallbacks = [];
+downvoteCallbacks = [];
 
 // ------------------------------------- User Profiles -------------------------------- //
 
