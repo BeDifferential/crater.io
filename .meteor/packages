@@ -63,7 +63,6 @@ telescope-i18n
 # Telescope Packages (Optional)
 
 telescope-datetimepicker
-telescope-theme-base
 telescope-module-share
 telescope-api
 telescope-rss
