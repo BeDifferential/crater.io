@@ -253,7 +253,7 @@ postSubmitClientCallbacks = [];
 postSubmitMethodCallbacks = [];
 postAfterSubmitMethodCallbacks = []; // runs on server only in a timeout
 
-postEditClientCallbacks = []; // loops over post object
+postEditClientCallbacks = []; // loops over modifier object
 postEditMethodCallbacks = []; // loops over modifier (i.e. "{$set: {foo: bar}}") object
 postAfterEditMethodCallbacks = []; // loops over modifier object
 
@@ -278,6 +278,12 @@ userProfileCompleteChecks = [];
 
 upvoteCallbacks = [];
 downvoteCallbacks = [];
+cancelUpvoteCallbacks = [];
+cancelDownvoteCallbacks = [];
+upvoteMethodCallbacks = [];
+downvoteMethodCallbacks = [];
+cancelUpvoteMethodCallbacks = [];
+cancelDownvoteMethodCallbacks = [];
 
 // ------------------------------------- User Profiles -------------------------------- //
 
@@ -337,3 +343,8 @@ themeSettings = {
 
 // array containing subscriptions to be preloaded
 preloadSubscriptions = [];
+
+// ------------------------------- Vote Power -------------------------------- //
+
+// The equation to determine Vote Power
+votePowerEq = null;
