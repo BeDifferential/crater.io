@@ -346,5 +346,9 @@ preloadSubscriptions = [];
 
 // ------------------------------- Vote Power -------------------------------- //
 
-// The equation to determine Vote Power
-votePowerEq = null;
+// The equation to determine voting power
+// Default to returning 1 for everybody
+
+getVotePower = function (user) {
+  return 1;
+};
